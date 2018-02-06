@@ -1,0 +1,62 @@
+<!-- Navbar Start -->
+<section class="navigation">
+    <div class="nav-container">
+        <div class="brand">
+            <a href="#!">Logo</a>
+        </div>
+        <nav>
+            <div class="nav-mobile">
+                <a id="nav-toggle"><span></span></a>
+            </div>
+            <ul class="nav-list">
+                <li>
+                    <a ng-href="#!/upload">Upload</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+<!-- Navbar End -->
+<!-- Breed Start -->
+<md-content id="content-scroller">
+    <div class="cards-wrap mobile">
+        <div class="card-group" ng-repeat="shot in vm.mobileProducts track by $index">
+            <div class="card-inner">
+                <div class="card" ng-repeat="breed in shot">
+                    <div class="text">
+                        <h4 class="breed">{{breed.breed}}</h4>
+                    </div>
+                    <img ng-src="{{breed.image}}" class="img-responsive" complete="true">
+                    <div class="likes">
+                        <a class="likes-inner">
+                            {{ breed.likes }}
+                            <img src="/images/heart.png" class="heart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+            class="cards-wrap desktop"
+            angular-grid="vm.desktopProducts"
+            ag-grid-width="300"
+            ag-performant-scroll="true"
+            ag-gutter-size="12"
+            ag-id="desktopProducts"
+    >
+        <div class="card" ng-repeat="breed in vm.desktopProducts track by $index">
+            <div class="text">
+                <h4 class="breed">{{breed.breed}}</h4>
+            </div>
+            <div class="img" style="background-image: url({{breed.image}});"></div>
+            <div class="likes">
+                <a class="likes-inner">
+                    {{ breed.likes }}
+                    <img src="/images/heart.png" class="heart">
+                </a>
+            </div>
+        </div>
+    </div>
+</md-content>
+<!-- Breed End -->

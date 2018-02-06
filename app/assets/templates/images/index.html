@@ -1,0 +1,45 @@
+<!-- Breed Start -->
+<md-content id="content-scroller">
+    <div class="cards-wrap mobile">
+        <div class="card-group" ng-repeat="shot in vm.mobileProducts track by $index">
+            <div class="card-inner">
+                <div class="card" ng-repeat="breed in shot">
+                    <div class="text">
+                        <h4 class="breed">{{breed.breed}}</h4>
+                    </div>
+                    <div class="img" style="background-image: url({{breed.image}});"></div>
+                    <img ng-src="{{breed.image}}" class="img-responsive" complete="true">
+                    <div class="likes">
+                        <a class="likes-inner">
+                            {{ breed.likes }}
+                            <img src="images/heart.png" class="heart">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+            class="cards-wrap desktop"
+            angular-grid="vm.desktopProducts"
+            ag-grid-width="300"
+            ag-performant-scroll="true"
+            ag-gutter-size="12"
+            ag-id="desktopProducts"
+    >
+        <div class="card" ng-repeat="breed in vm.desktopProducts track by $index">
+            <div class="text">
+                <h4 class="breed">{{breed.breed}}</h4>
+            </div>
+            <div class="img" style="background-image: url({{breed.image}});"></div>
+            <img ng-src="{{breed.image}}" class="img-responsive" complete="true">
+            <div class="likes">
+                <a class="likes-inner">
+                    {{ breed.likes }}
+                    <img src="images/heart.png" class="heart">
+                </a>
+            </div>
+        </div>
+    </div>
+</md-content>
+<!-- Breed End -->

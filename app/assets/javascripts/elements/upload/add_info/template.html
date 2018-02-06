@@ -1,0 +1,25 @@
+<div class="main-content">
+    <div class="content-box purple add_info content">
+        <div class="inner">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+                    <div class="box dropdown-list">
+                        <select class="form-control drop-down"
+                                ng-model="dogInfo.age"
+                                ng-options="age as age for age in ages">
+                        </select>
+                        <select class="form-control drop-down"
+                                ng-model="dogInfo.breed"
+                                ng-options="breed as breed for breed in breeds">
+                        </select>
+                        <select class="form-control drop-down"
+                                ng-model="dogInfo.photoType"
+                                ng-options="photo_type as photo_type for photo_type in photo_types">
+                        </select>
+                    </div>
+                    <button class="btn btn-round btn-info btn-lg" ng-click="uploadDogInfo()">UPLOAD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
